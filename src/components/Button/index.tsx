@@ -13,7 +13,7 @@ export default function InvoiceButton(props: buttonProps) {
         <>
             {
                 props.label === 'New Invoice' ?
-                    <button className={`rounded-full flex justify-between items-center py-1 px-2 bg-purple-300 w-40 hover:bg-purple-200 `} onClick={() => props.action && props.action()}>
+                    <button className={`rounded-full flex justify-between items-center py-2 px-3 bg-purple-300 w-32 hover:bg-purple-200 `} onClick={() => props.action && props.action()}>
                         <span className="w-5 h-5 rounded-full flex justify-center items-center bg-white">
                             <Plus size={16} color="#7C5DFA" weight="bold" />
                         </span>

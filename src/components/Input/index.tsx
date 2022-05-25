@@ -20,7 +20,7 @@ export default function InvoiceInput(props: inputProps) {
                     <label htmlFor={props.label} className={`${props.class} text-xs font-medium ${props.error && dirty ? 'text-red-100' : ''}`}>{props.label}</label>
                 </div> :
                 ''}
-            <input onFocus={() => setDirty(true)} type={props.type} name={props.label} value={props.value} onInput={(e) => props.getValue((e.target as any).value)} className={`${props.class} border rounded-sm ${props.error && dirty ? 'border-red-100' : ''}`} placeholder={props.placeholder} />
+            <input onFocus={() => setDirty(true)} type={props.type} name={props.label} value={props.value} onInput={(e) => props.getValue((e.target as any).value)} className={`${props.class} border rounded ${props.error && dirty ? 'border-red-100' : ''}`} placeholder={props.placeholder} />
         </div>
     )
 }
