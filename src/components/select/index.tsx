@@ -11,38 +11,39 @@ type dropDownProps = {
     placeholder?: string,
     value?: any,
     error?: boolean,
+    getValue(word: string): void,
     options: {
         label: string, value: string
     }[],
 
 }
 
-export default function InvoiceDropDown(props: dropDownProps) {
+export default function InvoiceSelect(props: dropDownProps) {
     const [dirty, setDirty] = useState(false)
     return (
-        <div>
+        <div className="w-full">
             {props.label ?
                 <div className="mb-2">
-                    <label htmlFor={props.label} className={`${props.class} text-xs font-medium ${props.error && dirty ? 'text-red-100' : ''}`}>{props.label}</label>
+                    <label htmlFor={props.label} className={`text-gray-500  text-xs font-medium ${props.error && dirty ? 'text-red-100' : ''}`}>{props.label}</label>
                 </div> :
                 ''}
-            <div className="relative h-12 w-60 m-8">
-                <StyledSelect title="Payment" className={`${props.class} p-2 border w-full text-sm font-medium h-full rounded border-gray-400`} onFocus={() => setDirty(true)}>
-                    <option value='0' selected disabled>Select car:</option>
-                    {
-                        props.options.map((e, i) => {
-                            return (
-                                <option key={i} value={e.value}>{e.label}</option>
-                            )
-                        })
-                    }
+
+            <StyledSelect title="Payment" className={`py-3 px-5 border w-full text-sm font-medium  rounded border-gray-300 focus:border-purple-200 focus:outline-none `} onFocus={() => setDirty(true)}>
+                <option value='0' selected disabled>{props.label}</option>
+                {
+                    props.options.map((e, i) => {
+                        return (
+                            <option key={i} value={e.value}>{e.label}</option>
+                        )
+                    })
+                }
 
 
-                </StyledSelect>
-                <span className="absolute top-3.5 right-3">
-                    <CaretDown size={16} />
-                </span>
-            </div>
+            </StyledSelect>
+            <span className="absolute top-3.5 right-3">
+                <CaretDown size={16} />
+            </span>
+
 
 
         </div>

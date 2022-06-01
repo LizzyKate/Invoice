@@ -6,6 +6,7 @@ type buttonProps = {
     action?: () => void,
     title: string,
     class?: string
+    type?: 'button' | 'submit' | 'reset'
 }
 
 export default function InvoiceButton(props: buttonProps) {
@@ -20,7 +21,7 @@ export default function InvoiceButton(props: buttonProps) {
                         <span className="text-xs text-white tracking-negative font-bold">{props.title}</span>
                     </button>
                     : props.label === 'Add' ?
-                        <button className={`bg-gray-100 flex justify-center space-x-2 items-center rouded-full w-80 px-2 py-1 text-gray-500 `}>
+                        <button type={props.type} className={`bg-gray-100 flex justify-center space-x-2 items-center rounded-full w-full px-2 py-3 text-gray-500 `} onClick={() => props.action ? props.action() : ''}>
                             <span>
                                 <Plus size={20} />
                             </span>

@@ -10,3 +10,7 @@
 body {
   font-family: 'League Spartan';
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
