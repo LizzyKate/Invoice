@@ -21,13 +21,13 @@ export default function InvoiceButton(props: buttonProps) {
                         <span className="text-xs text-white tracking-negative font-bold">{props.title}</span>
                     </button>
                     : props.label === 'Add' ?
-                        <button type={props.type} className={`bg-gray-100 flex justify-center space-x-2 items-center rounded-full w-full px-2 py-3 text-gray-500 `} onClick={() => props.action ? props.action() : ''}>
+                        <button type={props.type} className={`bg-gray-100 flex justify-center space-x-2 items-center rounded-full w-full px-2 py-3 text-gray-500  ${props.class}`} onClick={() => props.action ? props.action() : ''}>
                             <span>
                                 <Plus size={20} />
                             </span>
                             <span className="text-xs tracking-negative font-bold">{props.title}</span>
                         </button>
-                        : <button className={`rounded-full px-2 py-1 font-bold ${props.class}`}>{props.title}</button>
+                        : <button className={`rounded-full px-2 py-3 font-bold ${props.class}`} onClick={() => props.action && props.action()} type={props.type}>{props.title}</button>
             }
         </>
     )

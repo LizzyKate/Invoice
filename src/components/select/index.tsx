@@ -21,7 +21,7 @@ type dropDownProps = {
 export default function InvoiceSelect(props: dropDownProps) {
     const [dirty, setDirty] = useState(false)
     return (
-        <div className="w-full">
+        <div className="w-full relative">
             {props.label ?
                 <div className="mb-2">
                     <label htmlFor={props.label} className={`text-gray-500  text-xs font-medium ${props.error && dirty ? 'text-red-100' : ''}`}>{props.label}</label>
@@ -40,7 +40,7 @@ export default function InvoiceSelect(props: dropDownProps) {
 
 
             </StyledSelect>
-            <span className="absolute top-3.5 right-3">
+            <span className="absolute right-3" style={{ top: "46px" }}>
                 <CaretDown size={16} />
             </span>
 

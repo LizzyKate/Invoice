@@ -8,32 +8,33 @@ import { useState } from "react"
 
 
 
+
 const InvoiceData: [] | any[] = [
-    // {
-    //     id: 'RT3080',
-    //     date: 'Due  19 Aug 2021',
-    //     name: 'Jensen Huang',
-    //     amount: '£ 1,800.90',
-    //     status: 'Paid'
-    // },
-    // {
-    //     id: 'RT3080',
-    //     date: 'Due  19 Aug 2021',
-    //     name: 'Jensen Huang',
-    //     amount: '£ 1,800.90',
-    //     status: 'Pending'
-    // },
-    // {
-    //     id: 'RT3080',
-    //     date: 'Due  19 Aug 2021',
-    //     name: 'Jensen Huang',
-    //     amount: '£ 1,800.90',
-    //     status: 'Draft'
-    // }
+    {
+        id: 'RT3080',
+        date: 'Due  19 Aug 2021',
+        name: 'Jensen Huang',
+        amount: '£ 1,800.90',
+        status: 'Paid'
+    },
+    {
+        id: 'RT3082',
+        date: 'Due  19 Aug 2021',
+        name: 'Jensen Huang',
+        amount: '£ 1,800.90',
+        status: 'Pending'
+    },
+    {
+        id: 'RT3083',
+        date: 'Due  19 Aug 2021',
+        name: 'Jensen Huang',
+        amount: '£ 1,800.90',
+        status: 'Draft'
+    }
 ]
 
 
-export default function Invoice() {
+export default function Invoices() {
     const [newInvoice, setNewInvoice] = useState(false)
 
     const showModal = () => {
@@ -43,7 +44,7 @@ export default function Invoice() {
 
         <section className="flex h-screen">
             <SideBar />
-            <section className="bg-gray-700 flex-1 relative">
+            <section className={`flex-1 relative ${newInvoice ? "bg-black-600" : "bg-gray-700"}`}>
                 <div className="w-3/5 mx-auto mt-8">
                     <div className="flex justify-between items-center mb-12">
                         <div>
@@ -57,7 +58,7 @@ export default function Invoice() {
                     </div>
                     <InvoiceDetail detail={InvoiceData} />
                     {
-                        newInvoice && <InvoiceForm title="New Invoice" />
+                        newInvoice && <InvoiceForm title="New Invoice" label="Discard" draft={true} class="w-3/5" save="Save & Send" />
                     }
 
                 </div>
