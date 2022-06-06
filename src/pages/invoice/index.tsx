@@ -43,7 +43,7 @@ export default function Invoice() {
                         <div className="flex space-x-3 items-center">
                             <InvoiceButton title="Edit" class="bg-gray-100 hover:bg-gray-300 w-20 text-xs font-bold text-purple-100" action={() => { showModal() }} />
                             <InvoiceButton title="Delete" class="bg-orange-200 hover:bg-orange-500 w-20 text-xs text-white font-bold" />
-                            <InvoiceButton title="Mark as Paid" class="bg-purple-200 w-28 text-xs text-white font-bold" />
+                            <InvoiceButton title="Mark as Paid" class="bg-purple-200 hover:bg-purple-100 w-28 text-xs text-white font-bold" />
                         </div>
                     </div>
                     <div className={`p-4 bg-white mt-8 rounded-md ${edit && "opacity-50"}`}>
